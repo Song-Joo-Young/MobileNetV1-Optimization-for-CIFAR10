@@ -12,7 +12,7 @@ MobileNetV1, known for its efficiency and portability, is a popular choice for m
 * Data Augmentation Techniques: Implementing various data augmentation methods to improve model generalization.
 * Regularization Strategies: Applying dropout and other regularization techniques to prevent overfitting.
 
-Reference : 
-MobileNetV1 paper : [https://arxiv.org/abs/1704.04861]
-Mix-up augmentation : Facebookreseach mixup-cifar10 [https://github.com/facebookresearch/mixup-cifar10]
-Pruning : Towards Any Structural Pruning [https://github.com/VainF/Torch-Pruning]
+#### Reference : 
+* MobileNetV1 paper : [https://arxiv.org/abs/1704.04861]
+* Mix-up augmentation : Facebookreseach mixup-cifar10 [https://github.com/facebookresearch/mixup-cifar10]
+* Pruning : Towards Any Structural Pruning [https://github.com/VainF/Torch-Pruning]
