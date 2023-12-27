@@ -8,10 +8,21 @@ This repository showcases my work on optimizing MobileNetV1 for the CIFAR10 data
 MobileNetV1, known for its efficiency and portability, is a popular choice for mobile and edge computing. However, when dealing with specific datasets like CIFAR10, there's room for optimization to achieve better accuracy and efficiency. This project focuses on fine-tuning and optimizing MobileNetV1 specifically for the CIFAR10 dataset, which consists of 60,000 32x32 color images in 10 classes.
 
 ### Modifications and Optimizations
-* Architecture Adjustments: Minor changes in the network architecture to better fit the CIFAR10 dataset.
-* Hyperparameter Tuning: Extensive experimentation with learning rates, batch sizes, and other hyperparameters.
-* Data Augmentation Techniques: Implementing various data augmentation methods to improve model generalization.
-* Regularization Strategies: Applying dropout and other regularization techniques to prevent overfitting.
+
+#### Architecture Adjustments
+* Limited the channel depth to a maximum of 256, but compensated by stacking more blocks to create a deeper network architecture.
+* Added residual connections to each block to mitigate the gradient vanishing problem, allowing for significantly deeper layers.
+
+#### Hyperparameter Tuning
+* The most significant change was the use of a learning rate scheduler. The following scheduler was implemented: `scheduler = torch.optim.lr_scheduler.LambdaLR(optimizer, lr_lambda=lambda epoch: 0.94 ** epoch)`.
+
+#### Data Augmentation Techniques
+* Implemented mixup data augmentation. Mixup trains the model on convex combinations of pairs of examples and their labels, improving the model's generalization by encouraging linear behavior in-between training examples.
+
+#### Regularization Strategies
+* Introduced Dropout with a rate of 0.5 towards the end of the model to prevent overfitting.
+* Applied He initialization for weight initialization, which is particularly effective for networks with ReLU activations by maintaining a variance of 2/n for input units.
+
 
 ### Experiment Settings
 The limitation of the whole training time is 3,600 sec.
@@ -61,13 +72,13 @@ FLOPS have been reduced from 48,412,672 in Baseline MobileNetV1 to 28,963,840 in
 <p align="center">
   <img src="figures/Baseline%20MobileNetV1_Plot.png" alt="Baseline MobileNetV1 plot">
   <br>
-  <em>Figure 1: Baseline MobileNetV1 Loss / Accuracy Plot</em>
+  <strong>Figure 1: Baseline MobileNetV1 Loss / Accuracy Plot</strong>
 </p>
 
 <p align="center">
   <img src="figures/CustomMobileNet_Plot.png" alt="CustomMobileNet plot">
   <br>
-  <em>Figure 2: CustomMobileNet Loss / Accuracy Plot</em>
+  <strong>Figure 2: CustomMobileNet Loss / Accuracy Plot</strong>
 </p>
 
 
