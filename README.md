@@ -1,16 +1,14 @@
 # Pytorch MobileNetV1 Optimization for CIFAR10
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Song-Joo-Young/MobileNetV1-Optimization-for-CIFAR10/blob/main/MobileNet_CIFAR10_Optimization.ipynb)
 
-
-
-### Overview
+## Overview
 This repository showcases my work on optimizing MobileNetV1 for the CIFAR10 dataset. The aim was to enhance the performance of this lightweight deep learning model while maintaining its efficiency, making it more suitable for applications in environments with limited computational resources.
 * If you have questions about this repository, please send an e-mail to me (songsite123@naver.com) or make an issue.
 
-### Project Introduction
+## Project Introduction
 MobileNetV1, known for its efficiency and portability, is a popular choice for mobile and edge computing. However, when dealing with specific datasets like CIFAR10, there's room for optimization to achieve better accuracy and efficiency. This project focuses on fine-tuning and optimizing MobileNetV1 specifically for the CIFAR10 dataset, which consists of 60,000 32x32 color images in 10 classes.
 
-### Modifications and Optimizations
+## Modifications and Optimizations
 * Architecture Adjustments
   * Limited the channel depth to a maximum of 256, but compensated by stacking more blocks to create a deeper network architecture.
   * Added residual connections to each block to mitigate the gradient vanishing problem, allowing for significantly deeper layers.
@@ -28,9 +26,9 @@ MobileNetV1, known for its efficiency and portability, is a popular choice for m
 
 
 
-### Experiment Settings
+## Experiment Settings
 The limitation of the whole training time is 3,600 sec.
-#### Baseline MoblileNetV1
+### Baseline MoblileNetV1
 * The baseline model used in this repository follows the setting used in [kuangliu github pyorch-cifar](https://github.com/kuangliu/pytorch-cifar/blob/master/models/mobilenet.py).
 * Training batch size: 100
 * weight_decay = 0.0005
@@ -44,7 +42,7 @@ The limitation of the whole training time is 3,600 sec.
           transforms.RandomCrop(32),
           transforms.ToTensor()
       
-#### CustomMobileNet
+### CustomMobileNet
 * Training batch size: 500
 * weight_decay = 0.0025
 * epoch = 105
@@ -60,7 +58,7 @@ The limitation of the whole training time is 3,600 sec.
           transforms.RandomCrop(32),
           transforms.ToTensor()
 
-### Result
+## Result
 | Metric               | MobileNetV1   | MobileNetV2   | CustomMobileNet |
 |----------------------|---------------|---------------|-----------------|
 | Test set Accuracy (%)| 84.26         | 87.35         | **91.81**       |
@@ -74,7 +72,13 @@ The limitation of the whole training time is 3,600 sec.
 | Train batch size     | 100           | 100           | 500             |
 
 FLOPS have been reduced from 48,412,672 in Baseline MobileNetV1 to 28,963,840 in CustomMobileNet, resulting in a decrease of 19,448,832. The total number of parameters decreased from 3,217,226 to 1,002,218, marking a reduction of 2,215,008. Test accuracy improved from 8426/10000 (84.26%) in Baseline MobileNetV1 to 9185/10000 (91.85%) in CustomMobileNet, showing an increase of 7.59%.
-#### Loss/Accuracy Plot
+
+### Baseline vs CustomMobileNet
+* FLOPS : 48,412,672 → 28,963,840 **[ -19,448,832 ]**
+* Total Parameters : 3,217,226 → 1,002,218 **[ -2,215,008 ]**
+* Test Accuracy : 8426/10000 (84.26%) → 9185/10000 (91.85%) **[ +7.59% ]**
+  
+### Loss/Accuracy Plot
 
 <p align="center">
   <img src="figures/Baseline%20MobileNetV1_Plot.png" alt="Baseline MobileNetV1 plot">
@@ -89,10 +93,7 @@ FLOPS have been reduced from 48,412,672 in Baseline MobileNetV1 to 28,963,840 in
 </p>
 
 
-#### Baseline vs CustomMobileNet
-* FLOPS : 48,412,672 → 28,963,840 **[ -19,448,832 ]**
-* Total Parameters : 3,217,226 → 1,002,218 **[ -2,215,008 ]**
-* Test Accuracy : 8426/10000 (84.26%) → 9185/10000 (91.85%) **[ +7.59% ]**
+
 
 
 #### Reference : 
