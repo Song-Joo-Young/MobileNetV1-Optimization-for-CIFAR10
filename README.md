@@ -43,12 +43,15 @@ The limitation of the whole training time is 3,600 sec.
       
 #### CustomMobileNet
 * Training batch size: 500
-* weight_decay = 0.0005
+* weight_decay = 0.0025
 * epoch = 105
-* Learning rate : 0.03
+* momentum = 0.9
+* Initial Learning rate : 0.1
+* scheduler : `LambdaLR(optimizer, lr_lambda=lambda epoch: 0.94 ** epoch)`
 * Training time : 3544.5987 sec
 * optimizer : SGD
 * Data augmentation
+  * Mix-up(alpha = 1.0)) 
   *       transforms.Pad(4),
           transforms.RandomHorizontalFlip(),
           transforms.RandomCrop(32),
