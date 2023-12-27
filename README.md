@@ -43,11 +43,26 @@ The limitation of the whole training time is 3,600 sec.
           transforms.ToTensor()
 
 ### Result
-| Model             | Test set Accuracy (%) | FLOPS      | Total params | Total Size (MB) | pass size (MB) | Params size (MB) | epoch | Training time (sec) | Train batch size |
-|-------------------|-----------------------|------------|--------------|-----------------|----------------|------------------|-------|----------------------|------------------|
-| Baseline MobileNetV1       | 84.26                 | 48,412,672 | 3,217,226    | 20.25           | 7.97           | 12.27            | 100   | 3484.99              | 100              |
-| MobileNetV2       | 87.35                 | 319,015,424| 2,237,770    | 76.6            | 68.05          | 8.54             | 25    | 3439.57              | 100              |
-| CustomMobileNet   | 91.81                 | 28,374,016 | 1,001,642    | 14.41           | 10.58          | 3.82             | 105   | 3544.5987            | 500              |
+| Metric               | MobileNetV1   | MobileNetV2   | CustomMobileNet |
+|----------------------|---------------|---------------|-----------------|
+| Test set Accuracy (%)| 84.26         | 87.35         | **91.81**       |
+| FLOPS                | 48,412,672    | 319,015,424   | **28,374,016**  |
+| Total params         | 3,217,226     | 2,237,770     | **1,001,642**   |
+| Total Size (MB)      | 20.25         | 76.6          | 14.41           |
+| pass size (MB)       | 7.97          | 68.05         | 10.58           |
+| Params size (MB)     | 12.27         | 8.54          | 3.82            |
+| epoch                | 100           | 25            | 105             |
+| Training time (sec)  | 3484.99       | 3439.57       | 3544.60         |
+| Train batch size     | 100           | 100           | 500             |
+
+FLOPS have been reduced from 48,412,672 in Baseline MobileNetV1 to 28,963,840 in CustomMobileNet, resulting in a decrease of 19,448,832. The total number of parameters decreased from 3,217,226 to 1,002,218, marking a reduction of 2,215,008. Test accuracy improved from 8426/10000 (84.26%) in Baseline MobileNetV1 to 9185/10000 (91.85%) in CustomMobileNet, showing an increase of 7.59%.
+#### Loss/Accuracy Plot
+
+
+#### Baseline vs CustomMobileNet
+* FLOPS : 48,412,672 → 28,963,840 [ -19,448,832 ]
+* Total Parameters : 3,217,226 → 1,002,218 [ -2,215,008 ]
+* Test Accuracy : 8426/10000 (84.26%) → 9185/10000 (91.85%) [ +7.59% ]
 
 
 #### Reference : 
