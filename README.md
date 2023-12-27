@@ -1,5 +1,5 @@
 # Pytorch MobileNetV1 Optimization for CIFAR10
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]( )
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://github.com/Song-Joo-Young/MobileNetV1-Optimization-for-CIFAR10/blob/main/MobileNet_CIFAR10_Optimization.ipynb)
 
 
 ### Overview
