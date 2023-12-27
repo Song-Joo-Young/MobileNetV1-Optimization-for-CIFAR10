@@ -16,7 +16,7 @@ MobileNetV1, known for its efficiency and portability, is a popular choice for m
   * Conducted experiments with various training batch sizes and selected the most effective size. The highest accuracy was achieved with a training batch size of 500.
   * The most significant change was the use of a learning rate scheduler. The following scheduler was implemented: `scheduler = torch.optim.lr_scheduler.LambdaLR(optimizer, lr_lambda=lambda epoch: 0.94 ** epoch)`.
 
-*Data Augmentation Techniques
+* Data Augmentation Techniques
   * Implemented mixup data augmentation. Mixup trains the model on convex combinations of pairs of examples and their labels, improving the model's generalization by encouraging linear behavior in-between training examples.
 
 * Regularization Strategies
