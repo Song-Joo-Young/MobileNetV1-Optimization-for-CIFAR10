@@ -7,7 +7,7 @@ This repository showcases my work on optimizing MobileNetV1 for the CIFAR10 data
 ### Experiment Settings
 The limitation of the whole training time is 4,000 sec.
 #### Baseline MoblileNetV1
-* The baseline model used in this repository follows the setting used in (kuangliu github pyorch-cifar)[https://github.com/kuangliu/pytorch-cifar/blob/master/models/mobilenet.py].
+* The baseline model used in this repository follows the setting used in [kuangliu github pyorch-cifar](https://github.com/kuangliu/pytorch-cifar/blob/master/models/mobilenet.py).
 * Training batch size: 100
 * weight_decay = 5e-4
 * epoch = 100
