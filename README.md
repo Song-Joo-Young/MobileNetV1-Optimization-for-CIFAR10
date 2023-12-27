@@ -57,12 +57,14 @@ The limitation of the whole training time is 3,600 sec.
 
 FLOPS have been reduced from 48,412,672 in Baseline MobileNetV1 to 28,963,840 in CustomMobileNet, resulting in a decrease of 19,448,832. The total number of parameters decreased from 3,217,226 to 1,002,218, marking a reduction of 2,215,008. Test accuracy improved from 8426/10000 (84.26%) in Baseline MobileNetV1 to 9185/10000 (91.85%) in CustomMobileNet, showing an increase of 7.59%.
 #### Loss/Accuracy Plot
+![Baseline MobileNetV1 plot](figures/Baseline MobileNetV1_Plot.png)
+![CustomMoblieNet plot]((figures/CustomMobileNet_Plot.png)
 
 
 #### Baseline vs CustomMobileNet
-* FLOPS : 48,412,672 → 28,963,840 [ -19,448,832 ]
-* Total Parameters : 3,217,226 → 1,002,218 [ -2,215,008 ]
-* Test Accuracy : 8426/10000 (84.26%) → 9185/10000 (91.85%) [ +7.59% ]
+* FLOPS : 48,412,672 → 28,963,840 **[ -19,448,832 ]**
+* Total Parameters : 3,217,226 → 1,002,218 **[ -2,215,008 ]**
+* Test Accuracy : 8426/10000 (84.26%) → 9185/10000 (91.85%) **[ +7.59% ]**
 
 
 #### Reference : 
