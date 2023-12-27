@@ -58,6 +58,11 @@ The limitation of the whole training time is 3,600 sec.
 FLOPS have been reduced from 48,412,672 in Baseline MobileNetV1 to 28,963,840 in CustomMobileNet, resulting in a decrease of 19,448,832. The total number of parameters decreased from 3,217,226 to 1,002,218, marking a reduction of 2,215,008. Test accuracy improved from 8426/10000 (84.26%) in Baseline MobileNetV1 to 9185/10000 (91.85%) in CustomMobileNet, showing an increase of 7.59%.
 #### Loss/Accuracy Plot
 ![Baseline MobileNetV1 plot](figures/Baseline%20MobileNetV1_Plot.png)
+<p align="center">
+  <img src="figures/Baseline%20MobileNetV1_Plot.png" alt="Baseline plot">
+  <br>
+  <em> Figure 1: Baseline MobileNetV1 Loss / Accuracy Plot </em>
+</p>
 ![CustomMoblieNet plot](figures/CustomMobileNet_Plot.png)
 
 
@@ -69,6 +74,5 @@ FLOPS have been reduced from 48,412,672 in Baseline MobileNetV1 to 28,963,840 in
 
 #### Reference : 
 * MobileNetV1 paper : [https://arxiv.org/abs/1704.04861]
-* Mixup augmenataion : [ Facebookreseach mixup-cifar10](https://github.com/facebookresearch/mixup-cifar10)
 * Mix-up augmentation : Facebookreseach mixup-cifar10 [https://github.com/facebookresearch/mixup-cifar10]
 * Pruning : Towards Any Structural Pruning [https://github.com/VainF/Torch-Pruning]
