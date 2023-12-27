@@ -44,7 +44,7 @@ class CustomMobileNet(nn.Module):
     cfg = [32, 32, 32, (64,2), 64, 64, 64, (128,2), 128, 128, 128, 128, 128, 128, 128, 128, (256,2), 256, 256, 256, (512,2), 512]
 
     def __init__(self, num_classes=10):
-        super(MobileNet, self).__init__()
+        super(CustomMobileNet, self).__init__()
         self.conv1 = nn.Conv2d(3, 16, kernel_size=3, stride=1, padding=1, bias=False)
         self.bn1 = nn.BatchNorm2d(16)
         self.layers = self._make_layers(in_planes=16)
@@ -97,7 +97,7 @@ class CustomMobileNet(nn.Module):
 
 
 def test():
-    net = MobileNet()
+    net = CustomMobileNet()
     x = torch.randn(1,3,32,32)
     y = net(x)
     print(y.size())
