@@ -13,17 +13,18 @@ MobileNetV1, known for its efficiency and portability, is a popular choice for m
   * **Limited the channel depth to a maximum of 256**, but compensated by **stacking more blocks** to create a deeper network architecture.
   * **Added residual connections to each block** to mitigate the gradient vanishing problem, allowing for significantly deeper layers.
   * Model architecture
+    
 | Type / Stride                    | Filter Shape                     | Input Size       | Output Size      |
 |----------------------------------|----------------------------------|------------------|------------------|
 | Conv / s1                        | 3 × 3 × 3 × 16                   | 32 × 32 × 3      | 32 × 32 × 16     |
 | Block (Conv dw / s1, Conv / s1)  | 3 × 3 × 16 dw, 1 × 1 × 16 × 32   | 32 × 32 × 16     | 32 × 32 × 32     |
-| 2 × [Block (Conv dw / s1, Conv / s1)] | 3 × 3 × 32 dw, 1 × 1 × 32 × 32 | 32 × 32 × 32     | 32 × 32 × 32     |
+| 2 × [Block (Conv dw / s1, Conv / s1)] | 3 × 3 × 32 dw, 1 × 1 × 32 × 32 | 32 × 32 × 32     | 32 × 32 × 32  |
 | Block (Conv dw / s2, Conv / s1)  | 3 × 3 × 32 dw, 1 × 1 × 32 × 64   | 32 × 32 × 32     | 16 × 16 × 64     |
-| 3 × [Block (Conv dw / s1, Conv / s1)] | 3 × 3 × 64 dw, 1 × 1 × 64 × 64 | 16 × 16 × 64     | 16 × 16 × 64     |
+| 3 × [Block (Conv dw / s1, Conv / s1)] | 3 × 3 × 64 dw, 1 × 1 × 64 × 64 | 16 × 16 × 64     | 16 × 16 × 64  |
 | Block (Conv dw / s2, Conv / s1)  | 3 × 3 × 64 dw, 1 × 1 × 64 × 128  | 16 × 16 × 64     | 8 × 8 × 128      |
-| 8 × [Block (Conv dw / s1, Conv / s1)] | 3 × 3 × 128 dw, 1 × 1 × 128 × 128 | 8 × 8 × 128   | 8 × 8 × 128      |
+| 8 × [Block (Conv dw / s1, Conv / s1)] | 3 × 3 × 128 dw, 1 × 1 × 128 × 128 | 8 × 8 × 128   | 8 × 8 × 128   |
 | Block (Conv dw / s2, Conv / s1)  | 3 × 3 × 128 dw, 1 × 1 × 128 × 256 | 8 × 8 × 128     | 4 × 4 × 256      |
-| 3 × [Block (Conv dw / s1, Conv / s1)] | 3 × 3 × 256 dw, 1 × 1 × 256 × 256 | 4 × 4 × 256   | 4 × 4 × 256      |
+| 3 × [Block (Conv dw / s1, Conv / s1)] | 3 × 3 × 256 dw, 1 × 1 × 256 × 256 | 4 × 4 × 256   | 4 × 4 × 256   |
 | Block (Conv dw / s2, Conv / s1)  | 3 × 3 × 256 dw, 1 × 1 × 256 × 512 | 4 × 4 × 256     | 2 × 2 × 512      |
 | Block (Conv dw / s1, Conv / s1)  | 3 × 3 × 512 dw, 1 × 1 × 512 × 512 | 2 × 2 × 512     | 2 × 2 × 512      |
 | Avg Pool / s1                    | Pool 2 × 2                        | 2 × 2 × 512     | 1 × 1 × 512      |
