@@ -10,8 +10,8 @@ MobileNetV1, known for its efficiency and portability, is a popular choice for m
 
 ## Modifications and Optimizations
 * Architecture Adjustments
-  * Limited the channel depth to a maximum of 256, but compensated by stacking more blocks to create a deeper network architecture.
-  * Added residual connections to each block to mitigate the gradient vanishing problem, allowing for significantly deeper layers.
+  * **Limited the channel depth to a maximum of 256**, but compensated by **stacking more blocks** to create a deeper network architecture.
+  * **Added residual connections to each block** to mitigate the gradient vanishing problem, allowing for significantly deeper layers.
 
 * Hyperparameter Tuning
   * Conducted experiments with various training batch sizes and selected the most effective size. The highest accuracy was achieved with a training batch size of 500.
