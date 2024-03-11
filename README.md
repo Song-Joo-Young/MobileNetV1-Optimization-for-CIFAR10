@@ -36,8 +36,8 @@ MobileNetV1, known for its efficiency and portability, is a popular choice for m
   * The most significant change was the use of a learning rate scheduler. The following scheduler was implemented: `scheduler = torch.optim.lr_scheduler.LambdaLR(optimizer, lr_lambda=lambda epoch: 0.94 ** epoch)`.
 
 * Data Augmentation Techniques
-  * Implemented mixup data augmentation. Mixup trains the model on convex combinations of pairs of examples and their labels, improving the model's generalization by encouraging linear behavior in-between training examples.
-
+  * Implemented mixup data augmentation. Mixup trains the model on combinations of pairs of examples and their labels, improving the model's generalization.
+   
 * Regularization Strategies
   * Introduced Dropout with a rate of 0.5 towards the end of the model to prevent overfitting.
   * Applied He initialization for weight initialization, which is particularly effective for networks with ReLU activations by maintaining a variance of 2/n for input units.
